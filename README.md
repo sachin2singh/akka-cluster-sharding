@@ -22,5 +22,5 @@ mvn clean install
 ## Run application
 ~~~bash
 Open SpringBoot startup class and run: AkkaClusterDemoApplication
-Run from command line : java path/to/your/jarfile.jar com.akka.example.AkkaClusterDemoApplication
+Run from command line : java path/to/your/jarfile.jar com.akka.example.rest.AkkaClusterDemoApplication
 ~~~

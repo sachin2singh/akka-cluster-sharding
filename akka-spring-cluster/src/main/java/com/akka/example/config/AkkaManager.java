@@ -32,6 +32,10 @@ public class AkkaManager {
         log.debug("actorSystemName", akkaConfig.getActorSystemName());
         final var port = "2551";
         actorSystem = ActorSystem.create(create(), akkaConfig.getActorSystemName(), setupClusterNodeConfig(port));
+        clusterSharding = ClusterSharding.get(actorSystem);
+        nodePort = actorSystem.address().getPort().orElse(-1);
+        entitiesPerNode = actorSystem.settings().config().getInt("entity-actor.entities-per-node");
+        log.info("created actorSystem");
     }
 
     Behavior<Void> create() {
@@ -58,6 +62,22 @@ public class AkkaManager {
                 .withFallback(config);
     }
 
+    public ActorSystem getActorSystem() {
+        return actorSystem;
+    }
+
+    public ClusterSharding getClusterSharding() {
+        return clusterSharding;
+    }
+
+    public Integer getNodePort() {
+        return nodePort;
+    }
+
+    public int getEntitiesPerNode() {
+        return entitiesPerNode;
+    }
+
     private void startClusterSharding(final ActorSystem<?> actorSystem) {
         final var clusterSharding = ClusterSharding.get(actorSystem);
         clusterSharding.init(
@@ -77,5 +97,7 @@ public class AkkaManager {
                         )
                         .withStopMessage(AccountHandlerActor.Passivate.INSTANCE)
         );
+
+
     }
 }

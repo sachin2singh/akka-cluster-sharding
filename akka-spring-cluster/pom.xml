@@ -7,6 +7,7 @@
     <groupId>com.akka.example</groupId>
     <artifactId>akka-spring-cluster</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <parent>
         <groupId>com.akka.example</groupId>
         <artifactId>akka-cluster-sharding</artifactId>
@@ -93,6 +94,12 @@
             <groupId>com.akka.example</groupId>
             <artifactId>akka-spring-model</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor-typed_2.13</artifactId>
+            <version>2.6.17</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

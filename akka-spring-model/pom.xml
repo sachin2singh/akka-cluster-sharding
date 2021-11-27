@@ -7,7 +7,7 @@
     <groupId>com.akka.example</groupId>
     <artifactId>akka-spring-model</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+
     <parent>
         <groupId>com.akka.example</groupId>
         <artifactId>akka-cluster-sharding</artifactId>

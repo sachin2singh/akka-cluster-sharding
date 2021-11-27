@@ -20,6 +20,11 @@
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.akka.example</groupId>
+            <artifactId>akka-spring-cluster</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <parent>
@@ -27,10 +32,4 @@
         <artifactId>akka-cluster-sharding</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-    </properties>
-
 </project>
