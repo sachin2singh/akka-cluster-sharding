@@ -1,0 +1,4 @@
+---
+akka.initializer:
+  config.file.name: application.conf
+  actor.system.name: cluster
